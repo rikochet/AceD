@@ -104,7 +104,7 @@ function setup_node() {
   echo -e "Setting up..."
   get_ip
   create_config
-  import_bootstrap
+  #import_bootstrap
   update_config
 }
 
