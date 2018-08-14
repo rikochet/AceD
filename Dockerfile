@@ -7,12 +7,12 @@ ENV CONFIG_FILE='aced.conf'
 ENV CONFIGFOLDER='/root/.acedcore'
 ENV COIN_DAEMON='/usr/local/bin/acedd'
 ENV COIN_CLI='/usr/local/bin/aced-cli'
-ENV COIN_REPO='https://github.com/Acedcoin/AceD/releases/download/1.5/ubuntu16mn.tar.gz'
+ENV COIN_REPO='https://github.com/Acedcoin/AceD/releases/download/1.7/v17_fork.tar.gz'
 ENV COIN_NAME='AceD'
 ENV COIN_PORT=24126
 ENV CONFIG_FILE='aced.conf'
 ENV CONFIGFOLDER='/root/.acedcore'
-ENV COIN_BS='http://149.28.231.161/bootstrap.zip'
+#ENV COIN_BS='http://149.28.231.161/bootstrap.zip'
 ENV COINKEY=""
 
 # ENV NODEIP=$(curl -s4 icanhazip.com)
@@ -35,10 +35,10 @@ RUN apt-get update && apt-get install -y \
 ## Download Binaries and copy to system folder
 WORKDIR /root
 RUN wget -nv -O - $COIN_REPO | tar xvz -C /root
-RUN cp /root/ubuntu16mn/* /usr/local/bin \
+RUN cp /root/v17_fork/* /usr/local/bin \
     && strip /usr/local/bin/acedd /usr/local/bin/aced-cli \
     && chmod +x /usr/local/bin/acedd && chmod +x /usr/local/bin/aced-cli \
-    && rm -rf /root/ubuntu16mn
+    && rm -rf /root/v17_fork
 
 WORKDIR /root
 COPY ./aced_install.sh ./
