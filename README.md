@@ -1,7 +1,7 @@
 # AceD - docker image
 This docker image includes shell script to install a [AceD Masternode](http://www.acedcoin.com/) on a Linux server running Ubuntu 16.04.  
   
-This script will install **AceD v1.5**.
+This script will install **AceD v1.7**.
 ***
 
 
@@ -19,7 +19,7 @@ $ apt-get install docker.io
 Grab a copy of the AceD-Docker image template from github and build the template as local image.
 
 ```
-$ git clone git@github.com:rikochet/AceD-Docker.git \
+$ git clone https://github.com/rikochet/AceD-Docker.git \
 && cd AceD-Docker \
 && docker build -t aced-masternode .
 ```
@@ -34,7 +34,7 @@ Use docker to create a new volume (aced-mn1) and run the new image.
 $ docker volume create aced-mn1
 $ docker run -dit --restart unless-stopped \
 --name Aced-MN1 \
--v aced-nm1:/root/.acedcore \
+-v aced-mn1:/root/.acedcore \
 -p 24126:24126 \
 -e COIN_PORT=24126 \
 -e COINKEY='ABCDEFGHIJKLMNOPQRTSUVWXYZ0123456789' \
