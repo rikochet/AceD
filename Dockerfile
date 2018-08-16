@@ -7,7 +7,7 @@ ENV CONFIG_FILE='aced.conf'
 ENV CONFIGFOLDER='/root/.acedcore'
 ENV COIN_DAEMON='/usr/local/bin/acedd'
 ENV COIN_CLI='/usr/local/bin/aced-cli'
-ENV COIN_REPO='https://github.com/Acedcoin/AceD/releases/download/1.7/v17_fork.tar.gz'
+ENV COIN_REPO='https://github.com/Acedcoin/AceD/releases/download/1.8/v18_bugfix.tar.gz'
 ENV COIN_NAME='AceD'
 ENV COIN_PORT=24126
 ENV CONFIG_FILE='aced.conf'
@@ -35,10 +35,10 @@ RUN apt-get update && apt-get install -y \
 ## Download Binaries and copy to system folder
 WORKDIR /root
 RUN wget -nv -O - $COIN_REPO | tar xvz -C /root
-RUN cp /root/v17_fork/* /usr/local/bin \
+RUN cp /root/v18_bugfix/* /usr/local/bin \
     && strip /usr/local/bin/acedd /usr/local/bin/aced-cli \
     && chmod +x /usr/local/bin/acedd && chmod +x /usr/local/bin/aced-cli \
-    && rm -rf /root/v17_fork
+    && rm -rf /root/v18_bugfix
 
 WORKDIR /root
 COPY ./aced_install.sh ./
