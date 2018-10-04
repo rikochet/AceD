@@ -1,7 +1,7 @@
 # AceD - docker image
 This docker image includes shell script to install a [AceD Masternode](http://www.acedcoin.com/) on a Linux server running Ubuntu 16.04.  
   
-This script will install **AceD v1.8**.
+This script will install **AceD v1.8.1**.
 ***
 
 
