@@ -35,7 +35,7 @@ RUN apt-get update && apt-get install -y \
 ## Download Binaries and copy to system folder
 WORKDIR /root
 RUN wget -nv -O - $COIN_REPO | tar xvz -C /root
-RUN cp /root/v18_bugfix/* /usr/local/bin \
+RUN cp /root/Aced/* /usr/local/bin \
     && strip /usr/local/bin/acedd /usr/local/bin/aced-cli \
     && chmod +x /usr/local/bin/acedd && chmod +x /usr/local/bin/aced-cli \
     && rm -rf /root/v18_bugfix
